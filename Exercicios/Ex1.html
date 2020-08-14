@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex1</title>
+    </head>
+<!--Faça um script que verifique se uma letra digitada num campo de input é
+vogal ou consoante.-->
+
+    <body>
+        <form>
+            <div>
+                <label>Digite um caracter aqui: </label>
+                <input id="letra" type="text"> <button onclick="comparar()">Comparar</button>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            function comparar(){
+                var caracter = document.getElementById("letra").value;
+                caracter = caracter.toLowerCase();
+
+                if(caracter=="a" || caracter=="e" || caracter=="i" || caracter=="o" || caracter=="u"){
+                    alert("É vogal");
+                }else{
+                    alert("É consoante");           
+                }
+            }
+        </script>
+    </body>
+</html>

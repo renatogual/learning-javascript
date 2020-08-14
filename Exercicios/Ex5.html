@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex5</title>
+    </head>
+
+<!--Faça um script que leia três números inteiros, em seguida mostre o maior
+e o menor deles.-->
+
+    <body>
+        <form>
+            <div>
+                Digite um numero: <input type="text" id="num1"><br>
+                Digite um numero: <input type="text" id="num2"><br>
+                Digite um numero: <input type="text" id="num3"><br>
+                <button onclick="resultado()">Maior/menor numero</button>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            function resultado(){
+                var num1 = parseFloat(document.getElementById("num1").value);
+                var num2 = parseFloat(document.getElementById("num2").value);
+                var num3 = parseFloat(document.getElementById("num3").value);    
+                var maior = num1;
+                var menor = num1;
+
+                if(num2 > num1 && num2 > num3)
+                    maior = num2;
+                if(num3 > num1 && num3 > num2)
+                    maior = num3;
+                if(num2 < num1)
+                    menor = num2;
+                if(num3 < num1)
+                    menor = num3;
+                
+                alert("O maior numero é: "+maior+"\n"+"O menor numero é: "+menor)
+                
+            }
+        </script>
+    </body>
+</html>

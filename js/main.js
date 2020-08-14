@@ -1,17 +1,15 @@
 function comparar(){
-    var num1 = document.getElementById("num1").value;
-    var num2 = document.getElementById("num2").value;
-    if  (num1 == num2){
-        alert("Os valores são iguais");
-    }
-    if (num1 != num2){
-        alert("Os valores são diferentes");
-    }
-    if (num1 > num2){
-        alert("O primeiro valor é maior que o segundo")
-    }
-    if (num2 > num1){
-        alert("O segundo valor é maior que o primeiro")
+    var num1 = parseInt(document.getElementById("num1").value);
+
+    switch (num1){
+        case 1:alert("Janeiro");break;
+        case 2:alert("Fevereiro");break;
+        case 3:alert("Março");break;
+        case 4:alert("Abril");break;
+        case 5:alert("Maio");break;
+        case 6:alert("Junho");break;
+        case 7:alert("Julho");break;
+        default:alert("Voce nao digitou um numero válido");
     }
     
 }

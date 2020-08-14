@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ex3</title>
+    </head>
+
+<!--Faça um script que leia três números inteiros e mostre o maior deles.-->
+
+    <body>
+        <form>
+            <div>
+                Digite um numero: <input type="text" id="num1"><br>
+                Digite um numero: <input type="text" id="num2"><br>
+                Digite um numero: <input type="text" id="num3"><br>
+                <button onclick="resultado()">Maior numero</button>
+            </div>
+        </form>
+
+        <script type="text/javascript">
+            function resultado(){
+                var nota1 = parseFloat(document.getElementById("num1").value);
+                var nota2 = parseFloat(document.getElementById("num2").value);
+                var nota3 = parseFloat(document.getElementById("num3").value);    
+                
+                var maior = nota1;
+
+                if (nota2 > nota1 && nota2 > nota3){
+                    maior = nota2;
+                    alert("O maior numero digitado foi: "+ maior);
+                }else{
+                    if (nota3 > nota2 && nota3 > nota1){
+                        maior = nota3;
+                        alert("O maior numero digitado foi: "+ maior);
+                    }else{
+                        alert("O maior numero digitado foi: "+ maior)
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>
