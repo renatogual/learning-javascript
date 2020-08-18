@@ -13,10 +13,26 @@
                 <input id="num1" class="form-control" type="text" placeholder="Digite um numero aqui" style="margin-right: 10px;">
             </div>
             <div>
-                <button onclick="comparar()" class="btn btn-primary">Comparar</button>
+                <button onclick="getMonth()" class="btn btn-primary">Obter o mês</button>
             </div>
         </form>
 
-        <script type="text/javascript" src="js/main.js"></script>
+        <script>
+            function getMonth(){
+                var num1 = parseInt(document.getElementById("num1").value);
+
+                switch (num1){
+                    case 1:alert("Janeiro");break;
+                    case 2:alert("Fevereiro");break;
+                    case 3:alert("Março");break;
+                    case 4:alert("Abril");break;
+                    case 5:alert("Maio");break;
+                    case 6:alert("Junho");break;
+                    case 7:alert("Julho");break;
+                    default:alert("Voce digitou um número inválido");
+                }
+                
+            }
+        </script>
     </body>
 </html>
