@@ -1,0 +1,27 @@
+<!-- Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+vermelho com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+aparecer na tela. -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex1</title>
+</head>
+<body>
+    <button onclick="clicou()">Clique aqui</button>
+    <div id="box"></div>
+
+    <script>
+        function clicou() {
+            var boxElement = document.createElement('div')
+            boxElement.style.width = '100px'
+            boxElement.style.height = '100px'
+            boxElement.style.backgroundColor = '#f00'
+            boxElement.style.marginTop = '10px'
+            document.getElementById('box').appendChild(boxElement)
+        }
+    </script>
+</body>
+</html>
