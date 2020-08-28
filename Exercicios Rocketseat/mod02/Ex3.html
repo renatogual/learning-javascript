@@ -1,0 +1,27 @@
+<!-- A partir do seguinte vetor nomes: 
+Preencha uma lista (<ul>) no HTML com os itens da seguinte forma:
+● Diego
+● Gabriel
+● Lucas -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex3</title>
+</head>
+<body>
+    <script>
+        var nomes = ['Diego', 'Gabriel', 'Lucas']
+        var lista = document.createElement('ul')
+        
+        for (let i=0; i<3; i++) {
+            var items = document.createElement('li')
+            items.innerHTML = nomes[i]
+            lista.appendChild(items)
+        } 
+        document.body.appendChild(lista)  
+    </script>
+</body>
+</html>

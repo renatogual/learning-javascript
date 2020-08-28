@@ -6,7 +6,7 @@ algum quadrado troque sua cor para uma cor aleatória gerada pela função getRa
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ex1</title>
+    <title>Ex2</title>
 </head>
 <body>
     <button onclick="clicou()">Clique aqui</button>
@@ -19,6 +19,7 @@ algum quadrado troque sua cor para uma cor aleatória gerada pela função getRa
             boxElement.style.height = '100px'
             boxElement.style.backgroundColor = '#f00'
             boxElement.style.marginTop = '10px'
+            boxElement.onmouseover = function() {boxElement.style.backgroundColor = getRandomColor()}
             document.getElementById('box').appendChild(boxElement)
         }
 
@@ -30,7 +31,7 @@ algum quadrado troque sua cor para uma cor aleatória gerada pela função getRa
             }
             return color
         }
-        var newColor = getRandomColor()
+
     </script>
 </body>
 </html>
