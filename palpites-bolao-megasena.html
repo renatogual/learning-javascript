@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <title>Palpites Mega-sena-EOX</title>
+    <style>
+        label{
+            font-size: 20px;
+            text-align: center;
+        }
+        #numero{
+            font-size: 20px;
+        }
+        .col.s12.l6{
+            display: flex;
+            flex-direction: column;
+        }
+        #resultado{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="row">
+                <div class="col s12 l6">
+                    <label for="numero">Quantos números serão jogados?</label>
+                    <input type="number" id="numero">
+                    <button class="btn waves-effect waves-light" type="submit" onclick="sortearNumeros()">Sortear</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 l6">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Palpite</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 l6">
+                    <div id="resultado"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        const listaPalpites = [
+            {nome: 'Daniel', palpite: 52},
+            {nome: 'Laura', palpite: 19},
+            {nome: 'Artur', palpite: 5},
+            {nome: 'Dadja', palpite: 27},
+            {nome: 'Kelly', palpite: 13},
+            {nome: 'Pedro', palpite: 20},
+            {nome: 'Marcos', palpite: 11},
+            {nome: 'Karine', palpite: 2},
+            {nome: 'Wane', palpite: 18},
+            {nome: 'Danilo', palpite: 17},
+            {nome: 'Augusto', palpite: 7},
+            {nome: 'Nane', palpite: 54},
+            {nome: 'Henrique', palpite: 36},
+            {nome: 'Izabelle', palpite: 14},
+            {nome: 'Josafat', palpite: 35},
+            {nome: 'Giovanna', palpite: 23},
+            {nome: 'Emilia', palpite: 9},
+            {nome: 'Clemente', palpite: 33},
+            {nome: 'Valeria', palpite: 22},
+            {nome: 'Lucas', palpite: 10},
+            {nome: 'Renato', palpite: 45},
+            {nome: 'Dani', palpite: 60},
+            {nome: 'Xandao', palpite: 1},
+            {nome: 'Ervelino', palpite: 46},
+            {nome: 'Julia', palpite: 44}
+        ]
+
+        const numerosAleatorios = (maxNums, numsJogados) => {
+            let aleatorios = []
+
+            for (let i=0; i < numsJogados; i++) {
+                let numGerado = Math.floor(1+maxNums*Math.random())
+                while (aleatorios.includes(numGerado)) {
+                    numGerado = Math.floor(1+maxNums*Math.random())
+                }
+                aleatorios.push(numGerado)
+            }
+            return aleatorios
+        }
+
+        function sortearNumeros() {
+            const numerosJogados = document.querySelector('#numero').value
+            const numsGeradosAleatorios = numerosAleatorios(listaPalpites.length-1, numerosJogados)
+            const listaSorteados = []
+            const listaNumsSorteados = []
+
+            numsGeradosAleatorios.map(numero => {
+                listaSorteados.push(listaPalpites[numero])
+                listaNumsSorteados.push(listaPalpites[numero].palpite);
+            })
+
+            const tbody = document.querySelector('#tbody')
+
+            listaSorteados.map(item => {
+                const tr = document.createElement('tr')
+                const td1 = document.createElement('td')
+                const td2 = document.createElement('td')
+                td1.innerText = item.nome
+                td2.innerText = item.palpite
+                tr.appendChild(td1)
+                tr.appendChild(td2)
+                tbody.appendChild(tr)
+            })
+
+            document.querySelector('#resultado').innerHTML = `<h4>Números <br> ${listaNumsSorteados.join(' ')}</h4>`
+        }
+    </script>
+</body>
+</html>
+
